@@ -36,7 +36,7 @@ ListNode* merge(ListNode* head1, ListNode* head2)
 
     ListNode* mergeSort(vector<ListNode*>& lists, int l, int r)
     {
-        if (l == r) return lists[l];          // base case: ek hi list
+        if (l == r) return lists[l];
 
         int mid = l + (r - l) / 2;
         ListNode* left  = mergeSort(lists, l, mid);
@@ -45,7 +45,7 @@ ListNode* merge(ListNode* head1, ListNode* head2)
     }
 
     ListNode* mergeKLists(vector<ListNode*>& lists) {
-        if (lists.empty()) return NULL;       // [] ka case
+        if (lists.empty()) return NULL;
         return mergeSort(lists, 0, lists.size() - 1);
     }
 };

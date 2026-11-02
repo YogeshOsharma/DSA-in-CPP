@@ -18,6 +18,6 @@ public:
         {
             move+=i-m;
         }
-        return (int)move;
+        return move;
     }
 };

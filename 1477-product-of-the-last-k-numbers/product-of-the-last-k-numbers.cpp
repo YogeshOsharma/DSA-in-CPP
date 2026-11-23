@@ -6,18 +6,21 @@ public:
     }
     
     void add(int num) {
-        arr.push_back(num);
+        if(num==0)
+        {
+            arr.clear();
+            arr.push_back(1);
+        }
+        else
+        {
+            arr.push_back(arr.back()*num);
+        }
     }
     
     int getProduct(int k) {
-        int n = arr.size()-1;
-        int pro = 1;
-        while(k && n>=0)
-        {
-            pro*=arr[n--];
-            k--;
-        }
-        return pro;
+        int n = arr.size();
+        if(k>=n) return 0;
+        return arr[n-1]/arr[n-k-1];
     }
 };
 
